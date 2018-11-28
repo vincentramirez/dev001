@@ -110,7 +110,7 @@ resource "aws_instance" "web" {
     user = "ubuntu"
 # tags
   tags {
-    Name = "${aws_instance.web.id}-dev001"
+    Name = "web-dev001"
     owner = "vinnie@hashicorp.com"
     TTL = 1
   }
