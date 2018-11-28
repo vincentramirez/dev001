@@ -108,15 +108,17 @@ resource "aws_instance" "web" {
   connection {
     # The default username for our AMI
     user = "ubuntu"
-# tags
+     # The connection will use the local SSH agent for authentication.
+  }
+  # tags
   tags {
-    Name = "web-dev001"
+    Name = "${aws_instance.web.id}-dev001"
     owner = "vinnie@hashicorp.com"
     TTL = 1
+   }
   }
 
-    # The connection will use the local SSH agent for authentication.
-  }
+   
 
   instance_type = "t2.micro"
 
