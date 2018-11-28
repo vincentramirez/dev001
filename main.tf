@@ -1,4 +1,4 @@
-# Specify the provider and access details
+# Specify the provider and access details do something for us in TFE
 provider "aws" {
   region = "${var.aws_region}"
 }
