@@ -116,8 +116,6 @@ resource "aws_instance" "web" {
     owner = "vinnie@hashicorp.com"
     TTL = 1
    }
-  }
-
    
 
   instance_type = "t2.micro"
