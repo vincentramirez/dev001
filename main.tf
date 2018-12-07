@@ -3,6 +3,14 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
+provider "infoblox" {
+    username = "${var.infoblox_username}"
+    password = "${var.infoblox_password}"
+    host  = "${var.infoblox_host}"
+    sslverify = "${var.infoblox_sslverify}"
+    usecookies = "${var.infoblox_usecookies}"
+}
+
 # Create a VPC to launch our instances into
 resource "aws_vpc" "default" {
   cidr_block = "10.0.0.0/16"
