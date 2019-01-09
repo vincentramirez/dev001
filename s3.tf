@@ -13,8 +13,8 @@ resource "aws_s3_bucket" "examples3" {
         sse_algorithm     = "AES256"
       }
     }
- /* }
-  tags {
+  }
+ /* tags {
     website = "true"
   } */
 }
