@@ -1,0 +1,32 @@
+import "tfplan"
+
+# Get all outputs from all modules
+get_output = func() {
+    output = []
+    for tfplan.module_paths as path {
+        output += values(tfplan.module(path).output.) else []
+    }
+    return output
+}
+
+# Deny these outputs
+denied_outputs = [
+  "password",
+  "secret",
+]
+
+config_output = get_output()
+
+# Rule to deny outputs
+output_type_denied = rule {
+    all config_output as _, output {
+      all output as index, r {
+  	   r.applied.output in denied_outputs
+      }
+    }
+}
+  
+# Main rule that requires other rules to be true
+main = rule {
+  (output_type_denied) else false
+}
