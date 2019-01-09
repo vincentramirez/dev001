@@ -8,7 +8,7 @@ resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
 
   # VPC subnet
-  subnet_id = "subnet-015d842f592799509"
+  subnet_id = "subnet-05f417996108c1f5f"
 
   # security group
   # vpc_security_group_ids = ["${aws_security_group.sg.id}"]
