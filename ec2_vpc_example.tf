@@ -4,7 +4,7 @@ provider "aws" {}
 
 resource "aws_instance" "ec2" {
   count = "1"
-  ami           = "ami-0f8c82faeb08f15da"
+  ami           = "ami-009d6802948d06e52"
   instance_type = "t2.micro"
 
   # VPC subnet
