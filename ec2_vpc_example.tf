@@ -1,5 +1,6 @@
 provider "aws" {}
 
+/*
 #EC2 INSTANCE(s)//-------------------------------------------------------------
 
 resource "aws_instance" "ec2" {
@@ -24,7 +25,7 @@ resource "aws_instance" "ec2" {
   }
 }
 
-/*
+
 #SECURITY GROUP(s)//-----------------------------------------------------------  
 
 resource "aws_security_group" "sg" {
@@ -47,7 +48,7 @@ resource "aws_security_group" "sg" {
 tags {
     Name = "allow-ssh"
   }
-}
+} */
 
 #VPC//------------------------------------------------------------------------- 
 
@@ -159,4 +160,4 @@ resource "aws_route_table_association" "subnet-public-2-a" {
 resource "aws_route_table_association" "subnet-public-3-a" {
     subnet_id = "${aws_subnet.subnet-public-3.id}"
     route_table_id = "${aws_route_table.subnet-public.id}"
-}  */
+}  
