@@ -14,7 +14,7 @@ resource "aws_s3_bucket" "examples3" {
       }
     }
   }
- /* tags {
+  tags {
     website = "true"
-  } */
+  } 
 }
