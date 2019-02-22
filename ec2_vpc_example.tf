@@ -1,5 +1,5 @@
 #provider "aws" {}
-provdier "azurerm" {}
+provider "azurerm" {}
 
 #Azure Storage account//------------------------------------------------------- 
 
