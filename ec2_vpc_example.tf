@@ -1,5 +1,7 @@
 #provider "aws" {}
-provdier "azurerm" {}
+provdier "azurerm" {
+  version = "=1.22.0"
+}
 
 #Azure Storage account//------------------------------------------------------- 
 
