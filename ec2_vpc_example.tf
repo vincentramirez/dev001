@@ -1,16 +1,15 @@
 #provider "aws" {}
-provdier "azurerm" {
-  version = "=1.22.0"
-}
+provdier "azurerm" {}
 
 #Azure Storage account//------------------------------------------------------- 
 
-resource "azure_resource_group" "storageRG" {
+resource "azurerm_resource_group" "storageRG" {
   name      = "vinnie_rg"
   location  = "westus"
   }
 resource "azurerm_storage_account" "storage" {
-  name = "mysg123"
+  
+  name = "${random_id.storageAccountName.dec}"
 
   resource_group_name = "${azurerm_resource_group.storageRG.name}"
 
