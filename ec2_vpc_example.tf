@@ -8,7 +8,7 @@ resource "azure_resource_group" "storageRG" {
   location  = "westus"
   }
 resource "azurerm_storage_account" "storage" {
-  name = "${random_id.storageAccountName.dec}"
+  name = "mysg123"
 
   resource_group_name = "${azurerm_resource_group.storageRG.name}"
 
