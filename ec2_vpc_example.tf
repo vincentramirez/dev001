@@ -1,4 +1,22 @@
 provider "aws" {}
+provdier "azurerm" {}
+
+#Azure Storage account//------------------------------------------------------- 
+
+resource "azurerm_storage_account" "storage" {
+  name = "${random_id.storageAccountName.dec}"
+
+  resource_group_name = "${azurerm_resource_group.storageRG.name}"
+
+  location = "${azurerm_resource_group.storageRG.location}"
+
+  account_kind = "Storage"
+
+  account_tier = "${var.storageAccountType}"
+
+  account_replication_type = "${var.storageAccountReplication}"
+}
+
 
 /*
 #EC2 INSTANCE(s)//-------------------------------------------------------------
@@ -9,13 +27,13 @@ resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
 
   # VPC subnet
-  subnet_id = "subnet-05f417996108c1f5f"
+  #subnet_id = "subnet-05f417996108c1f5f"
 
   # security group
   # vpc_security_group_ids = ["${aws_security_group.sg.id}"]
 
   # the public SSH key
-  key_name = "vinnie"
+  #key_name = "vinnie"
 
   # tags
   tags {
@@ -23,9 +41,9 @@ resource "aws_instance" "ec2" {
     owner = "vinnie@hashicorp.com"
     TTL = 1
   }
-}
+}  */
 
-
+/*
 #SECURITY GROUP(s)//-----------------------------------------------------------  
 
 resource "aws_security_group" "sg" {
@@ -48,7 +66,7 @@ resource "aws_security_group" "sg" {
 tags {
     Name = "allow-ssh"
   }
-} */
+} 
 
 #VPC//------------------------------------------------------------------------- 
 
@@ -161,3 +179,4 @@ resource "aws_route_table_association" "subnet-public-3-a" {
     subnet_id = "${aws_subnet.subnet-public-3.id}"
     route_table_id = "${aws_route_table.subnet-public.id}"
 }  
+*/
