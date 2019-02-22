@@ -4,8 +4,8 @@ provdier "azurerm" {}
 #Azure Storage account//------------------------------------------------------- 
 
 resource "azure_resource_group" "storageRG" {
-  name      = vinnie_rg
-  location  = westus
+  name      = "vinnie_rg"
+  location  = "westus"
   }
 resource "azurerm_storage_account" "storage" {
   name = "${random_id.storageAccountName.dec}"
@@ -45,9 +45,9 @@ resource "aws_instance" "ec2" {
     owner = "vinnie@hashicorp.com"
     TTL = 1
   }
-}  */
+}  
 
-/*
+
 #SECURITY GROUP(s)//-----------------------------------------------------------  
 
 resource "aws_security_group" "sg" {
