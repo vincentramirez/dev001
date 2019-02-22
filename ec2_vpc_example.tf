@@ -3,6 +3,10 @@ provdier "azurerm" {}
 
 #Azure Storage account//------------------------------------------------------- 
 
+resource "azure_resource_group" "storageRG" {
+  name      = vinnie_rg
+  location  = westus
+  }
 resource "azurerm_storage_account" "storage" {
   name = "${random_id.storageAccountName.dec}"
 
