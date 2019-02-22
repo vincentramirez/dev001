@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "storageRG" {
   }
 resource "azurerm_storage_account" "storage" {
   
-  name = "${random_id.storageAccountName.dec}"
+  name = "1234vinnieStorageAccount"
 
   resource_group_name = "${azurerm_resource_group.storageRG.name}"
 
